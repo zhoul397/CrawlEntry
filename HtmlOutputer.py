@@ -24,7 +24,7 @@ class HtmlOutputer(object):
                 cursor = conn.cursor()
                 i += 1
                 sql = 'INSERT INTO `citiao`(`ID`, `CiTiaoName`, `UrlHref`, `Content`) VALUES (%s, %s, %s, %s)'
-            #执行上面的SQL语句，并传入3个参数
+                #执行上面的SQL语句，并传入3个参数
                 cursor.execute(sql, (i, data['title'], data['url'], data['summary']))
                 conn.commit()
             finally:
