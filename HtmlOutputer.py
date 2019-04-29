@@ -8,7 +8,7 @@ class HtmlOutputer(object):
             return
         print(new_data['summary'])
         self.datas.append(new_data)
-#数据库操作函数
+    #数据库操作函数
     def into_mysql(self):
         i = 0
         for data in self.datas:
