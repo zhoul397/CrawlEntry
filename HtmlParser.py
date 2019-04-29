@@ -13,7 +13,7 @@ class HtmlParser(object):
         return new_urls, new_data
     def _get_new_urls(self, new_url, soup):
         new_urls = set()
-    #获取要爬取的链接
+        #获取要爬取的链接
         links = soup.find_all('a', href=re.compile(r'/item/\w+'))
         for link in links:
             new_url1 = link['href']
@@ -23,11 +23,11 @@ class HtmlParser(object):
     def _get_new_data(self, new_url, soup):
         res_data = {}
         res_data['url'] = new_url
-    #<dd class="lemmaWgt-lemmaTitle-title"><h1>Python</h1>
-    #获取词条的标题
+        #<dd class="lemmaWgt-lemmaTitle-title"><h1>Python</h1>
+        #获取词条的标题
         title_node = soup.find('dd', class_='lemmaWgt-lemmaTitle-title').find('h1')
         res_data['title'] = title_node.get_text()
-    #获取词条内容
+        #获取词条内容
         summary_node = soup.find('div', class_='lemma-summary')
         res_data['summary'] = summary_node.get_text()
         return res_data
